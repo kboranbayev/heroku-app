@@ -1,0 +1,47 @@
+{
+  "name": "heroku-app-kuanysh",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@pusher/chatkit": "^0.7.17",
+    "axios": "^0.18.0",
+    "bufferutil": "^3.0.3",
+    "compression": "^1.7.2",
+    "concurrently": "^3.5.1",
+    "create-react-native-app": "^1.0.0",
+    "express": "^4.16.3",
+    "gravatar-url": "^2.0.0",
+    "jwt-decode": "^2.2.0",
+    "morgan": "^1.9.0",
+    "normalizr": "^3.2.4",
+    "prop-types": "^15.6.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-icons": "^2.2.7",
+    "react-native": "^0.57.1",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-css": "^2.3.0",
+    "semantic-ui-react": "^0.78.3",
+    "socket.io": "^2.0.4",
+    "utf-8-validate": "^4.0.0",
+    "uuid": "^3.2.1",
+    "validator": "^9.4.1"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run r-start",
+    "r-start": "react-scripts start",
+    "r-styles": "sass --watch --style compressed src/styles/index.scss:src/styles/index.css",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "https://react-node-api.herokuapp.com",
+  "devDependencies": {
+    "nodemon": "^1.17.2",
+    "redux-devtools-extension": "^2.13.2"
+  }
+}
