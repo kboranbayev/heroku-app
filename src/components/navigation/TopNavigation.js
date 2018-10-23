@@ -18,12 +18,12 @@ class TopNavigation extends React.Component {
     const { user, logout } = this.props;
 
     return(
-      <Menu secondary pointing>
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} as={Link} to="/">
-          Home
+      <Menu secondary>
+        <Menu.Item name='home' className="btn btn-primary" active={activeItem === 'home'} onClick={this.handleItemClick} as={Link} to="/">
+          <span className="">HOME</span>
         </Menu.Item>
-        <Menu.Item name='dashboard' active={activeItem === 'dashboard'} onClick={this.handleItemClick} as={Link} to="/dashboard">
-          Dashboard
+        <Menu.Item name='dashboard' className="btn btn-primary" active={activeItem === 'dashboard'} onClick={this.handleItemClick} as={Link} to="/dashboard">
+          <span className="">DASHBOARD</span>
         </Menu.Item>
         <Menu.Menu>
         </Menu.Menu>
@@ -34,7 +34,7 @@ class TopNavigation extends React.Component {
                   <Label size={'tiny'} circular>{user.email}</Label>
                 </Menu.Item>
                 <Menu.Item name='account' active={activeItem === 'account'} onClick={this.handleItemClick} as={Link} to="/account_info">
-                  <i className="address card icon medium"></i>
+                  <span className="">ACCOUNT INFO</span>
                 </Menu.Item>
                 <Menu.Item name='logout' active={activeItem === 'logout'} onClick={() => logout()}>Logout</Menu.Item>
               </Menu.Menu>)  

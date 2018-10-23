@@ -25,16 +25,23 @@ class SendMessageForm extends React.Component {
 
   render() {
     return(
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input 
-            type='text'
-            placeholder='Type message here ...'
-            onChange={this.onChange}
-          />
-          <input 
-            type='submit'
-          />
+      <div className="chat-form">
+        <form onSubmit={this.onSubmit} className="form-group">
+          <div className="col-md-10">
+            <input 
+              type='text'
+              placeholder='Type message here ...'
+              className="form-control input-lg"
+              onChange={this.onChange}
+            />
+          </div>
+          <div className="col-md-2">
+            <input 
+              type='submit'
+              className="btn btn-primary"
+              value="Send"
+            />
+          </div>
         </form>
       </div>
       )

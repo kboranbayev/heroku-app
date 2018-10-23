@@ -13,6 +13,10 @@ import rootReducer from './rootReducer';
 import { userLoggedIn } from './actions/auth';
 import setAuthorizationHeader from './utils/setAuthorizationHeader';
 
+/* Styling */
+import "./styles/style.css";
+
+
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))

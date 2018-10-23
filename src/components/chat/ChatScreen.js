@@ -72,7 +72,6 @@ class ChatScreen extends React.Component {
   render() {
     return (
       <div>
-        <h3>Current User: {this.props.currentUsername}</h3>
         <MessageList messages={this.state.messages} />
         <SendMessageForm 
           onSubmit={this.sendMessage}

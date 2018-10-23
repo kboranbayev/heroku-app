@@ -15,12 +15,17 @@ import GuestRoute from "./components/routes/GuestRoute";
 import TopNavigation from "./components/navigation/TopNavigation";
 
 const App = ({ location, isAuthenticated, data }) => (
-  <div>
-    <Route 
-      location={location}
-      path="/"
-      component={TopNavigation}
-    />
+  <div className="main">
+    {isAuthenticated
+      ?
+      <Route 
+        location={location}
+        path="/"
+        component={TopNavigation}
+      /> 
+      : <div />
+    }
+    
     <Route 
       location={location} 
       path="/" 

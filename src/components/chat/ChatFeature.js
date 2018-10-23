@@ -8,11 +8,9 @@ class ChatFeature extends React.Component {
   render() {
     const { username, chatkitToken } = this.props;
     return (
-      <Container>
-        Chat 
-        username is { username }
+      <div className="container">
         <ChatScreen currentUsername= { username } chatkitToken = { chatkitToken } />
-      </Container>
+      </div>
     );
   }
 }

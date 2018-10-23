@@ -43,38 +43,42 @@ class LoginForm extends React.Component {
     const { data, errors, loading } = this.state;
 
     return (
-      <Form onSubmit={this.onSubmit} loading={loading}>
+      <Form onSubmit={this.onSubmit} loading={loading} className="row">
         {errors.global && (
           <Message negative>
             <Message.Header>Something went wrong</Message.Header>
             <p>{errors.global}</p>
           </Message>
         )}
-        <Form.Field error={!!errors.email}>
-          <label htmlFor="email">Email</label>
+        <Form.Field error={!!errors.email} className="form-group">
+          <label htmlFor="email" class="sr-only">Email</label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="example@example.com"
+            placeholder="Email"
+            className="form-control input-lg"
             value={data.email}
             onChange={this.onChange}
           />
           {errors.email && <InlineError text={errors.email} />}
         </Form.Field>
         <Form.Field error={!!errors.password}>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" class="sr-only">Password</label>
           <input
             type="password"
             id="password"
             name="password"
-            placeholder="Make it secure"
+            placeholder="Password"
+            className="form-control input-lg"
             value={data.password}
             onChange={this.onChange}
           />
           {errors.password && <InlineError text={errors.password} />}
         </Form.Field>
-        <Button primary>Login</Button>
+        <div className="form-group">
+          <input className="btn btn-primary" type="submit" value="Login" />
+        </div>
       </Form>
     );
   }
