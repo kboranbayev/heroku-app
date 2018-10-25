@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const path = require('path');
 
 const normalizePort = port => parseInt(port, 10);
-const PORT = normalizePort(process.env.PORT || 8080);
+const port = normalizePort(process.env.PORT || 8080);
 
 const app = express();
 const dev = app.get('env') !== 'production';
