@@ -5,10 +5,25 @@ const morgan = require('morgan');
 const path = require('path');
 
 const normalizePort = port => parseInt(port, 10);
-const PORT = normalizePort(process.env.PORT || 5000);
+const PORT = normalizePort(process.env.PORT || 8080);
 
 const app = express();
 const dev = app.get('env') !== 'production';
+
+app.use(favicon(__dirname + '/build/favicon.ico'));
+// the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/ping', function (req, res) {
+ return res.send('pong');
+});
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+app.listen(port);
+
+/*
 
 if (!dev) {
   app.disable('x-powered-by');
@@ -33,3 +48,5 @@ server.listen(PORT, err => {
 
   console.log('Server started!', POST);
 })
+
+*/
